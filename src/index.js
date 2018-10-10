@@ -9,6 +9,7 @@ import reducers from "./reducers";
 
 import PostIndex from "./containers/PostIndex";
 import PostNew from "./containers/PostNew";
+import PostDetails from "./containers/PostDetails";
 
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
@@ -18,7 +19,8 @@ ReactDOM.render(
     <BrowserRouter>
       <div>
         <Route exact path="/" component={PostIndex} />
-        <Route path="/posts/new" component={PostNew} />
+        <Route exact path="/posts/new" component={PostNew} />
+        <Route path="/posts/:id" component={PostDetails} />
       </div>
     </BrowserRouter>
   </Provider>,

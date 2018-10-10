@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Field, reduxForm } from "redux-form";
 import { connect } from "react-redux";
+import { Link } from 'react-router-dom';
 
 import { createPost } from '../actions';
 
@@ -40,6 +41,7 @@ class PostNew extends Component {
           <Field label="Category" name="categories" component={this.renderField} />
           <Field label="Content" name="content" component={this.renderField} />
           <button className="btn btn-primary" type="submit">Submit</button>
+          <Link className="btn btn-danger" to="/"> Cancel </Link>
         </form>
       </div>
     );
