@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { fetchPost } from '../actions';
 
@@ -10,10 +11,18 @@ class PostDetails extends Component {
   }
 
   render() {
-    console.log(this.props.post);
+    const { post } = this.props
+
+    if(!post){
+      return <div>Loading...</div>
+    }
+
     return (
       <div>
-        PostDetails
+        <Link to="/">Back to Index</Link>
+        <h2>{post.title}</h2>
+        <h6>{post.categories}</h6>
+        <p>{post.content}</p>
       </div>
     )
   }
