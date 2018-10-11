@@ -50,7 +50,7 @@ class PostNew extends Component {
 
 function validate(values){
   const error = {}
-  console.log(values);
+  
   if(!values.title) {
     error.title = "Please enter a title"
   }
